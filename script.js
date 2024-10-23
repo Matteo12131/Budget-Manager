@@ -42,8 +42,14 @@ incrementBtn.addEventListener('click', () => {
 });
 //Azzera il numero e lo salva
 rstBtn.addEventListener('click', () => {
+    console.log('Reset button clicked');
     numberDisplay.textContent = 0;
 
     // Salva il numero nel database Firebase
-    set(numberRef, 0);
+    set(numberRef, 0).then(() => {
+        console.log('Reset successful');
+    }).catch((error) => {
+        console.error('Error resetting the number:', error);
+    });
 });
+
