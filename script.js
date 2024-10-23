@@ -44,5 +44,5 @@ restBtn.addEventListener('click', () => {
     numberDisplay.textContent = 0;
 
     // Salva il numero nel database Firebase
-    set(numberRef, currentNumber);
+    set(numberRef, 0);
 });
