@@ -23,6 +23,7 @@ const numberRef = ref(database, 'number');
 // Elementi del DOM
 const numberDisplay = document.getElementById('numberDisplay');
 const incrementBtn = document.getElementById('incrementBtn');
+const rstBtn = document.getElementById('rstBtn');
 
 // Carica il numero salvato
 onValue(numberRef, (snapshot) => {
@@ -35,6 +36,12 @@ incrementBtn.addEventListener('click', () => {
     let currentNumber = parseInt(numberDisplay.textContent) || 0; // Assicurati che non sia NaN
     currentNumber++;
     numberDisplay.textContent = currentNumber;
+
+    // Salva il numero nel database Firebase
+    set(numberRef, currentNumber);
+});
+restBtn.addEventListener('click', () => {
+    numberDisplay.textContent = 0;
 
     // Salva il numero nel database Firebase
     set(numberRef, currentNumber);
