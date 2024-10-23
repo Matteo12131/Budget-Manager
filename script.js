@@ -40,7 +40,8 @@ incrementBtn.addEventListener('click', () => {
     // Salva il numero nel database Firebase
     set(numberRef, currentNumber);
 });
-restBtn.addEventListener('click', () => {
+//Azzera il numero e lo salva
+rstBtn.addEventListener('click', () => {
     numberDisplay.textContent = 0;
 
     // Salva il numero nel database Firebase
